@@ -46,7 +46,8 @@ First and foremost, Stlr is a keyboard experience and it has been designed with 
 
 ## How do I get started?
 
-> [!IMPORTANT] Do not modify the source code
+> [!IMPORTANT]
+> Do not modify the source code
 > 
 > Please **do not** modify the source code of Stlr for your game. Instead, use its API to customise the behaviour you want. Modifying the source code makes it much harder for you to receive future updates.
 > 
@@ -60,7 +61,8 @@ You can also read through the ~~API reference~~. While we recommend reading the 
 
 ## How do I get help with Stlr?
 
-> [!IMPORTANT] Luau knowledge
+> [!IMPORTANT]
+> Luau knowledge
 > 
 > If you don't know how to program with [Luau](https://luau-lang.org) then we recommend you don't use Stlr. Stlr is targeted towards those with experience in the Luau language and you will run into bigger problems down the road if you don't know what you're doing.
 > 

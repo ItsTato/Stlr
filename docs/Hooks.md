@@ -12,11 +12,10 @@ The callback is passed the [CommandContext](/api/CommandContext) for the relevan
 
 This hook can be used to interrupt command execution (useful for permissions) by returning a string. The returned string will replace the command output on the executing user's screen. If the callback returns nothing (`nil` or no return), then the command will run normally.
 
-:::caution Security Warning
-
-Commands will be blocked from running in a live game unless you register at least one BeforeRun hook.
-
-:::
+> [!CAUTION]
+> Security Warning
+>
+> Commands will be blocked from running in a live game unless you register at least one BeforeRun hook.
 
 As a quick way to register hooks on both the server and the client, you can make a folder for your hooks, with module scripts in them which return a function. Similar to Types, if you call [`Stlr.Registry:RegisterHooksIn(yourFolderHere)`](/api/Registry#RegisterHooksIn) from the server, Stlr will load all ModuleScripts in the folder on the server and the client, so you only need to write your code once.
 

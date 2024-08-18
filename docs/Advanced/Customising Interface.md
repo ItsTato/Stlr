@@ -8,7 +8,8 @@ The Stlr GUI will be inserted into StarterGui if it doesn't already exist. You c
 
 You can also customise the Stlr interface through `PlayerGui:WaitForChild("Stlr")` and then making changes from there.
 
-> [!WARNING] Updating
+> [!WARNING]
+> Upgrading
 > 
 > If we make an update that changes the Stlr interface, then this might break your customisations. You'll then need to take manual action when updating.
 > 
