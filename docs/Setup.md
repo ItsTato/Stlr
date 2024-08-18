@@ -2,15 +2,13 @@
 
 Once you've installed Stlr, you'll need to set it up **on both the server and client** to get running. Your setup code could exist within your existing codebase (for instance, if you use a framework) or it could be done with simple scripts.
 
-> [!INFO]
-> There are plenty of resources available to help you with Stlr, such as this website and our Discord server, but we've been made aware of a number of DevForum guides and YouTube videos which provide incorrect or outdated instructions.
+> [!NOTE] There are plenty of resources available to help you with Stlr, such as this website and our Discord server, but we've been made aware of a number of DevForum guides and YouTube videos which provide incorrect or outdated instructions.
 
 **We recommend you stick to our official resources, especially if you're new to Stlr.** If you decide to use unofficial resources, then the level of support we can provide is limited.
 
 ## Modifying the source code
 
-> [!WARNING]
-> Do not modify the source code
+> [!WARNING] Do not modify the source code
 > 
 > Please **do not** modify the source code of Stlr for your game. Instead, use its API to customise the behaviour you want. Modifying the source code makes it much harder for you to receive future updates.
 > 
@@ -38,8 +36,7 @@ Stlr will automatically create and insert into StarterGui its console interface 
 
 Stlr will also insert into `ReplicatedStorage` the [`StlrClient`](/api/StlrClient) module. On top of being the client entry point (read on below!), this module also houses stuff for internal use, like replication (any commands, types and hooks the client needs to know about) and networking.
 
-> [!NOTE]
-> You're not done yet!
+> [!NOTE] You're not done yet!
 >
 > Client setup is also required, you need to register Stlr on the server _and_ client for it to load. Keep going! ↓
 

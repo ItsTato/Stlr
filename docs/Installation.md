@@ -6,7 +6,7 @@ We recommend installing Stlr in a place only visible on the server (such as `Ser
 
 You can choose one of many installation methods. While there are other potential installation methods, we recommend sticking to one of the below, unless you're sure you know what you're doing.
 
-> [!INFO] 
+> [!NOTE] 
 > There are plenty of resources available to help you with Stlr, such as this website and our Discord server, but we've been made aware of a number of DevForum guides and YouTube videos which provide incorrect or outdated instructions.
 > 
 > **We recommend you stick to our official resources, especially if you're new to Stlr.**

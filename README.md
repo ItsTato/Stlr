@@ -4,9 +4,7 @@
 </div>
 
 > [!NOTE]
-> **Stlr** is a fork of [**Cmdr**](https://github.com/evaera/Cmdr). 
-> Make sure to check [**Cmdr**](https://github.com/evaera/Cmdr) out before checking out Stlr.
-> Huge thanks 🙏 to all original [**Cmdr**](https://github.com/evaera/Cmdr) contributors for their work!
+> **Stlr** is a fork of [**Cmdr**](https://github.com/evaera/Cmdr). Make sure to check [**Cmdr**](https://github.com/evaera/Cmdr) out before checking out Stlr. Huge thanks 🙏 to all original [**Cmdr**](https://github.com/evaera/Cmdr) contributors for their work!
 
 **Stlr** is a fully extensible and type safe command console for Roblox developers.
 

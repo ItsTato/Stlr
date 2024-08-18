@@ -2,8 +2,7 @@
 
 By default, these types are available:
 
-> [!INFO]
-> Possibly outdated
+> [!NOTE] Possibly outdated
 > 
 > We've not reviewed this section for a while, it's possible that this information may be out of date.
 
