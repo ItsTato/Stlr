@@ -13,7 +13,7 @@ return function(Stlr)
 	Window.AutoComplete = AutoComplete;
 
 	-- Sets the Window.ProcessEntry callback so that we can dispatch our commands out
-	function Window.ProcessEntry(text);
+	function Window.ProcessEntry(text)
 		text = Util.TrimString(text);
 
 		if #text == 0 then
