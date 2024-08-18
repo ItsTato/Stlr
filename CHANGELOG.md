@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.13.0
+
+- Initial Stlr fork.
+- Rebranding of entire module
+
 ## v1.12.0
 
 - Add `convertTimestamp` default command, outputs a human-readable timestamp from epoch seconds
