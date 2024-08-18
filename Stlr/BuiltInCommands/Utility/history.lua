@@ -17,12 +17,12 @@ return {
 	},
 
 	ClientRun = function(context, line)
-		local history = context.Dispatcher:GetHistory()
+		local history = context.Dispatcher:GetHistory();
 
 		if line <= 0 then
-			line = #history + line
-		end
+			line = #history + line;
+		end;
 
-		return history[line] or ""
+		return history[line] or "";
 	end,
-}
+};

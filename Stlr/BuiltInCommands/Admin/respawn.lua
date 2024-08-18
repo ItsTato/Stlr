@@ -12,4 +12,4 @@ return {
 			Description = "The players to respawn.",
 		},
 	},
-}
+};

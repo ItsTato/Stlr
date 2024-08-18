@@ -1,10 +1,10 @@
 local conditions = {
 	startsWith = function(text, arg)
 		if text:sub(1, #arg) == arg then
-			return text:sub(#arg + 1)
-		end
+			return text:sub(#arg + 1);
+		end;
 	end,
-}
+};
 
 return {
 	Name = "runif",
@@ -36,20 +36,20 @@ return {
 	},
 
 	ClientRun = function(context, condition, arg, testAgainst, command)
-		local conditionFunc = conditions[condition]
+		local conditionFunc = conditions[condition];
 
 		if not conditionFunc then
-			return ("Condition %q is not valid."):format(condition)
-		end
+			return ("Condition %q is not valid."):format(condition);
+		end;
 
-		local text = conditionFunc(testAgainst, arg)
+		local text = conditionFunc(testAgainst, arg);
 
 		if text then
 			return context.Dispatcher:EvaluateAndRun(
 				context.Stlr.Util.RunEmbeddedCommands(context.Dispatcher, command or text)
-			)
-		end
+			);
+		end;
 
-		return ""
+		return "";
 	end,
-}
+};

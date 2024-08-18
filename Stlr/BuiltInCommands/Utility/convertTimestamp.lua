@@ -12,7 +12,7 @@ return {
 		},
 	},
 	ClientRun = function(_, timestamp)
-		timestamp = timestamp or os.time()
-		return `{os.date("%x", timestamp)} {os.date("%X", timestamp)}`
+		timestamp = timestamp or os.time();
+		return `{os.date("%x", timestamp)} {os.date("%X", timestamp)}`;
 	end,
-}
+};

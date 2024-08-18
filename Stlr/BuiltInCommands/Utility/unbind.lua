@@ -12,14 +12,14 @@ return {
 	},
 
 	ClientRun = function(context, inputEnum)
-		local binds = context:GetStore("STLR_Binds")
+		local binds = context:GetStore("STLR_Binds");
 
 		if binds[inputEnum] then
-			binds[inputEnum]:Disconnect()
-			binds[inputEnum] = nil
-			return "Unbound command from input."
+			binds[inputEnum]:Disconnect();
+			binds[inputEnum] = nil;
+			return "Unbound command from input.";
 		else
-			return "That input wasn't bound."
+			return "That input wasn't bound.";
 		end
 	end,
-}
+};

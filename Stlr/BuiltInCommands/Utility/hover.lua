@@ -1,4 +1,4 @@
-local Players = game:GetService("Players")
+local Players = game:GetService("Players");
 
 return {
 	Name = "hover",
@@ -7,15 +7,15 @@ return {
 	Args = {},
 
 	ClientRun = function()
-		local mouse = Players.LocalPlayer:GetMouse()
-		local target = mouse.Target
+		local mouse = Players.LocalPlayer:GetMouse();
+		local target = mouse.Target;
 
 		if not target then
-			return ""
-		end
+			return "";
+		end;
 
-		local p = Players:GetPlayerFromCharacter(target:FindFirstAncestorOfClass("Model"))
+		local p = Players:GetPlayerFromCharacter(target:FindFirstAncestorOfClass("Model"));
 
-		return p and p.Name or ""
+		return p and p.Name or "";
 	end,
-}
+};

@@ -246,8 +246,7 @@ function Dispatcher:RunHooks(hookName: string, commandContext, ...)
 			if displayedBeforeRunHookWarning == false then
 				commandContext:Reply(
 					-- FIXME: This link will need to be updated when new docs are deployed
-					(RunService:IsServer() and "<Server>" or "<Client>")
-						.. " Commands will not run in-game if no BeforeRun hook is configured.",
+					"[!] "..(RunService:IsServer() and "[Server]" or "[Client]").." Commands will not run in-game if no BeforeRun hook is configured.",
 					Color3.fromRGB(255, 228, 26)
 				);
 				displayedBeforeRunHookWarning = true;

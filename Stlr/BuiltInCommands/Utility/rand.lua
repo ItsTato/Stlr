@@ -18,6 +18,6 @@ return {
 	},
 
 	ClientRun = function(_, min, max)
-		return tostring(max and math.random(min, max) or math.random(min))
+		return tostring(max and math.random(min, max) or math.random(min));
 	end,
-}
+};

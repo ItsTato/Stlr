@@ -30,6 +30,6 @@ return {
 	},
 
 	ClientRun = function(_, operation, a, b)
-		return operation.Perform(a, b)
+		return operation.Perform(a, b);
 	end,
-}
+};

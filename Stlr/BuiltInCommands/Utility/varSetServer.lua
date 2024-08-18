@@ -1,63 +1,63 @@
-local DataStoreService = game:GetService("DataStoreService")
+local DataStoreService = game:GetService("DataStoreService");
 
-local queue = {}
-local DataStoresActive, DataStore
+local queue = {};
+local DataStoresActive, DataStore;
 task.spawn(function()
 	DataStoresActive, DataStore = pcall(function()
-		local DataStore = DataStoreService:GetDataStore("_package/eryn.io/Stlr")
-		DataStore:GetAsync("test_key")
-		return DataStore
-	end)
+		local DataStore = DataStoreService:GetDataStore("_package/eryn.io/Stlr");
+		DataStore:GetAsync("test_key");
+		return DataStore;
+	end);
 
 	while #queue > 0 do
-		coroutine.resume(table.remove(queue, 1))
-	end
-end)
+		coroutine.resume(table.remove(queue, 1));
+	end;
+end);
 
 return function(context, key, value)
 	if DataStoresActive == nil then
-		table.insert(queue, coroutine.running())
-		coroutine.yield()
-	end
+		table.insert(queue, coroutine.running());
+		coroutine.yield();
+	end;
 
-	local gameWide = false
-	local saved = true
+	local gameWide = false;
+	local saved = true;
 
 	if key:sub(1, 1) == "$" then
-		key = key:sub(2)
-		gameWide = true
-	end
+		key = key:sub(2);
+		gameWide = true;
+	end;
 
 	if key:sub(1, 1) == "." then
-		key = key:sub(2)
-		saved = false
-	end
+		key = key:sub(2);
+		saved = false;
+	end;
 
 	if saved and not DataStoresActive then
-		return "# You must publish this place to the web to use saved keys."
-	end
+		return "# You must publish this place to the web to use saved keys.";
+	end;
 
-	local namespace = "var_" .. (gameWide and "global" or tostring(context.Executor.UserId))
+	local namespace = "var_" .. (gameWide and "global" or tostring(context.Executor.UserId));
 
 	if saved then
-		local keyPath = namespace .. "_" .. key
+		local keyPath = namespace .. "_" .. key;
 
-		DataStore:SetAsync(keyPath, value)
+		DataStore:SetAsync(keyPath, value);
 
 		if type(value) == "table" then
-			return table.concat(value, ",") or ""
-		end
+			return table.concat(value, ",") or "";
+		end;
 
-		return value
+		return value;
 	else
-		local store = context:GetStore(namespace)
+		local store = context:GetStore(namespace);
 
-		store[key] = value
+		store[key] = value;
 
 		if type(value) == "table" then
-			return table.concat(value, ",") or ""
-		end
+			return table.concat(value, ",") or "";
+		end;
 
-		return value
-	end
-end
+		return value;
+	end;
+end;

@@ -1,4 +1,4 @@
-local HttpService = game:GetService("HttpService")
+local HttpService = game:GetService("HttpService");
 
 return {
 	Name = "json-array-encode",
@@ -14,6 +14,6 @@ return {
 	},
 
 	ClientRun = function(_, text)
-		return HttpService:JSONEncode(text:split(","))
+		return HttpService:JSONEncode(text:split(","));
 	end,
-}
+};

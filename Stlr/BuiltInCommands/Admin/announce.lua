@@ -10,4 +10,4 @@ return {
 			Description = "The announcement text.",
 		},
 	},
-}
+};

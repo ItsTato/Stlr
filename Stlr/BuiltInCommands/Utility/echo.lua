@@ -12,6 +12,6 @@ return {
 	},
 
 	ClientRun = function(_, text)
-		return text
+		return text;
 	end,
-}
+};

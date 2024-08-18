@@ -1,4 +1,4 @@
-local version = "v1.13.0"
+local version = "v1.13.0";
 
 return {
 	Name = "version",
@@ -7,6 +7,6 @@ return {
 	Group = "DefaultDebug",
 
 	ClientRun = function()
-		return ("Stlr Version %s"):format(version)
+		return ("Stlr Version %s"):format(version);
 	end,
-}
+};

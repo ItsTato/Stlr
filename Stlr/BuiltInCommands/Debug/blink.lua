@@ -20,4 +20,4 @@ return {
 
 		return "Blinked!"
 	end,
-}
+};

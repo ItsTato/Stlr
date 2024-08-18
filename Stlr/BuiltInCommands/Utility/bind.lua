@@ -1,5 +1,5 @@
-local UserInputService = game:GetService("UserInputService")
-local TextChatService = game:GetService("TextChatService")
+local UserInputService = game:GetService("UserInputService");
+local TextChatService = game:GetService("TextChatService");
 
 return {
 	Name = "bind",
@@ -26,54 +26,54 @@ return {
 	},
 
 	ClientRun = function(context, bind, command, arguments)
-		local binds = context:GetStore("STLR_Binds")
+		local binds = context:GetStore("STLR_Binds");
 
-		command = command .. " " .. arguments
+		command = command .. " " .. arguments;
 
 		if binds[bind] then
-			binds[bind]:Disconnect()
-		end
+			binds[bind]:Disconnect();
+		end;
 
-		local bindType = context:GetArgument(1).Type.Name
+		local bindType = context:GetArgument(1).Type.Name;
 
 		if bindType == "userInput" then
 			binds[bind] = UserInputService.InputBegan:Connect(function(input, gameProcessed)
 				if gameProcessed then
-					return
-				end
+					return;
+				end;
 
 				if input.UserInputType == bind or input.KeyCode == bind then
 					context:Reply(
 						context.Dispatcher:EvaluateAndRun(
 							context.Stlr.Util.RunEmbeddedCommands(context.Dispatcher, command)
 						)
-					)
-				end
-			end)
+					);
+				end;
+			end);
 		elseif bindType == "bindableResource" then
-			return "Unimplemented..."
+			return "Unimplemented...";
 		elseif bindType == "player" then
 			local function RunCommand(message)
-				local args = { message }
+				local args = { message };
 				local chatCommand = context.Stlr.Util.RunEmbeddedCommands(
 					context.Dispatcher,
 					context.Stlr.Util.SubstituteArgs(command, args)
-				)
+				);
 				context:Reply(
 					("%s $ %s : %s"):format(bind.Name, chatCommand, context.Dispatcher:EvaluateAndRun(chatCommand)),
 					Color3.fromRGB(244, 92, 66)
-				)
-			end
+				);
+			end;
 
 			if TextChatService.ChatVersion == Enum.ChatVersion.LegacyChatService then
-				binds[bind] = bind.Chatted:Connect(RunCommand)
+				binds[bind] = bind.Chatted:Connect(RunCommand);
 			else
 				binds[bind] = TextChatService.SendingMessage:Connect(function(message)
-					RunCommand(message.Text)
-				end)
-			end
-		end
+					RunCommand(message.Text);
+				end);
+			end;
+		end;
 
-		return "Bound command to input."
+		return "Bound command to input.";
 	end,
-}
+};

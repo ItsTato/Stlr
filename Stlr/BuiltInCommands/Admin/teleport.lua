@@ -19,4 +19,4 @@ return {
 			Description = "The player to teleport to",
 		},
 	},
-}
+};

@@ -14,25 +14,25 @@ return {
 
 	ClientRun = function(context, text)
 		if #text == 0 then
-			return ""
-		end
+			return "";
+		end;
 
-		local shouldPrintOutput = context.Dispatcher:Run("var", "INIT_PRINT_OUTPUT") ~= ""
+		local shouldPrintOutput = context.Dispatcher:Run("var", "INIT_PRINT_OUTPUT") ~= "";
 
-		local commands = text:gsub("\n+", "\n"):split("\n")
+		local commands = text:gsub("\n+", "\n"):split("\n");
 
 		for _, command in ipairs(commands) do
 			if command:sub(1, 1) == "#" then
-				continue
-			end
+				continue;
+			end;
 
-			local output = context.Dispatcher:EvaluateAndRun(command)
+			local output = context.Dispatcher:EvaluateAndRun(command);
 
 			if shouldPrintOutput then
-				context:Reply(output)
-			end
-		end
+				context:Reply(output);
+			end;
+		end;
 
-		return ""
+		return "";
 	end,
-}
+};

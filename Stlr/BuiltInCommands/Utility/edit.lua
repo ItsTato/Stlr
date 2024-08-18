@@ -1,4 +1,4 @@
-local Players = game:GetService("Players")
+local Players = game:GetService("Players");
 
 local TEXT_BOX_PROPERTIES = {
 	AnchorPoint = Vector2.new(0.5, 0.5),
@@ -18,9 +18,9 @@ local TEXT_BOX_PROPERTIES = {
 	TextYAlignment = "Top",
 	AutoLocalize = false,
 	PlaceholderText = "Right click to exit",
-}
+};
 
-local lock
+local lock;
 
 return {
 	Name = "edit",
@@ -43,37 +43,37 @@ return {
 	},
 
 	ClientRun = function(context, text, delimeter)
-		lock = lock or context.Stlr.Util.Mutex()
+		lock = lock or context.Stlr.Util.Mutex();
 
-		local unlock = lock()
+		local unlock = lock();
 
-		context:Reply("Right-click on the text area to exit.", Color3.fromRGB(158, 158, 158))
+		context:Reply("Right-click on the text area to exit.", Color3.fromRGB(158, 158, 158));
 
-		local screenGui = Instance.new("ScreenGui")
-		screenGui.Name = "StlrEditBox"
-		screenGui.ResetOnSpawn = false
+		local screenGui = Instance.new("ScreenGui");
+		screenGui.Name = "StlrEditBox";
+		screenGui.ResetOnSpawn = false;
 
-		local textBox = Instance.new("TextBox")
+		local textBox = Instance.new("TextBox");
 
 		for key, value in pairs(TEXT_BOX_PROPERTIES) do
-			textBox[key] = value
-		end
+			textBox[key] = value;
+		end;
 
-		textBox.Text = text:gsub(delimeter, "\n")
-		textBox.Parent = screenGui
+		textBox.Text = text:gsub(delimeter, "\n");
+		textBox.Parent = screenGui;
 
-		screenGui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
+		screenGui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui");
 
-		local thread = coroutine.running()
+		local thread = coroutine.running();
 
 		textBox.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton2 then
-				coroutine.resume(thread, textBox.Text:gsub("\n", delimeter))
-				screenGui:Destroy()
-				unlock()
-			end
-		end)
+				coroutine.resume(thread, textBox.Text:gsub("\n", delimeter));
+				screenGui:Destroy();
+				unlock();
+			end;
+		end);
 
-		return coroutine.yield()
+		return coroutine.yield();
 	end,
-}
+};

@@ -13,9 +13,9 @@ return {
 
 	ClientRun = function(_, value)
 		if type(value) ~= "table" then
-			value = { value }
-		end
+			value = { value };
+		end;
 
-		return table.concat(value, ",")
+		return table.concat(value, ",");
 	end,
-}
+};

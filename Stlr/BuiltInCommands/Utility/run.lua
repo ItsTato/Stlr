@@ -15,6 +15,6 @@ return {
 	},
 
 	ClientRun = function(context, commandString)
-		return context.Stlr.Util.RunCommandString(context.Dispatcher, commandString)
+		return context.Stlr.Util.RunCommandString(context.Dispatcher, commandString);
 	end,
-}
+};

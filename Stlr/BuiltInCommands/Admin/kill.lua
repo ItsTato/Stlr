@@ -10,4 +10,4 @@ return {
 			Description = "The players to kill.",
 		},
 	},
-}
+};

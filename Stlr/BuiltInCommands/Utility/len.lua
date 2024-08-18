@@ -12,6 +12,6 @@ return {
 	},
 
 	ClientRun = function(_, list)
-		return #(list:split(","))
+		return #(list:split(","));
 	end,
-}
+};
